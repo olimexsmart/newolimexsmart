@@ -5,116 +5,153 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>OlimexSmart</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<link rel="icon" type="image/png" href="images/favicon.png" />
-	</head>
-	<body>
-		<!-- Wrapper -->
-			<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+<head>
+	<title>OlimexSmart</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
 
-							<!-- Logo -->
-							<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/favicon.png" alt="" /></span><span class="title">OlimexSmart</span>
-							</a>
+<body>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-							<!-- Nav -->
-							<nav>
-								<ul>
-									<li><a href="#menu">Menu</a></li>
-								</ul>
-							</nav>
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
 
-						</div>
-					</header>
+				<!-- Logo -->
+				<a href="index.html" class="logo">
+					<span class="symbol">
+						<img src="images/favicon.png" alt="" />
+					</span>
+					<span class="title">OlimexSmart</span>
+				</a>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Projects</a></li>
-							<li><a href="bio.html">Curriculum</a></li>							
-							<li><a href="logger/logger.html">Home logging</a></li>
-							<li><a href="fitbit.html">FitBit OAuth2</a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>Timelapse Rig</h1>
-							<p style="text-align:center">
-									<iframe width="560" height="315" src="https://www.youtube.com/embed/qBKt7m3d6O4" frameborder="0" allowfullscreen></iframe>
-							</p>
-							<p>Everybody has lying around one of those bulky compact digital cameras. My idea here was to have a pretti uniform
-								solution that let's you convert on of those into a timelapse machine. To make a Full HD video are sufficient photos
-								of resolution 1920x1080 that are equivalent to about 2 megapixels which usually also these older cameras are capable of.					
-								The video above was taken with a Premier(?) 5Mpx camera of 2005, I'm satisfied with the result, clearly not professional
-								but still sufficient to grab those likes on Instagram.
-							</p>
-							<p>Sure, the image quality is not defined only by the number of pixels, but using a 5 megapixel camera not
-								at its maximum resolution but with its best image quality led to quite good results. Obviously some noise is 
-								there especially when the light is scarce. Another problem is the limited possibility of tweaking the camera settings,
-								for example in the video above there is a precise moment when the white balance shifts drammatically. This is simply because 
-								I had to leave it in auto. 
-							</p>
-							<p>The first thing I learned about timelapses is the foundamental importance of having a good tripod. I have very nice timelapses
-								made with this is setup that sadly are not worth publishing because too shaky because of the wind. Battery power is also quite 
-								important, as you can imagine. The system, comprehending the camera, is powered by a 12V battery.
-							</p>
-							<p>The idea is actually very simple: a jig for the compact camera that periodicaly presses the shutter button. The motion is achieved
-								through a solenoid controlled by an embedded system. The control board has a screen which displays the interval and the battery 
-								level, and it's also used for setting up the timing. The inputs are an ON/OFF switch and two potentiometers one used to control 
-								the delay between photos, the other to calibrate the interaction with the two stage shutter button. 
-							</p>
-							<p>The latter was quite a complex part to deal with since the button was not intended to be used this way for sure. The intended 
-								use-case scenario involves a human feeling with his touch the first pressing and wait until the camera has focus then, after that,
-								use more force to trigger the second level of pressing and snap that photo. The difference in force is quite subtle, moreover the
-								focus time is not constant but usually is the same into the same timelapse since the conditions don't vary lot. Both of this 
-								quantities can be fine tuned using the the second potentiometer.
-							</p>
-			
-							<p>The code can be found on GitHub and for question you can use the form in the bio page.</p>
-						</div>
-					</div>
-
-				<!-- Footer -->
-				<footer id="footer">
-					<div class="inner">
-						<section>						
-							<h2>Follow</h2>
-							<ul class="icons">
-								<li><a href="https://twitter.com/OlimexSmart" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://www.facebook.com/Luca.Olivieri94" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="https://www.instagram.com/olimexsmart/" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="https://github.com/olimexsmart" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="mailto:ollivernew@hotmail.it?Subject=Olimexsmart%20visitor" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-							</ul>
-						</section>
-						<ul class="copyright">
-							<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
-				</footer>
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li>
+							<a href="#menu">Menu</a>
+						</li>
+					</ul>
+				</nav>
 
 			</div>
+		</header>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li>
+					<a href="index.html">Projects</a>
+				</li>
+				<li>
+					<a href="bio.html">Curriculum</a>
+				</li>
+				<li>
+					<a href="logger/logger.html">Home logging</a>
+				</li>
+				<li>
+					<a href="fitbit.html">FitBit OAuth2</a>
+				</li>
+			</ul>
+		</nav>
 
-	</body>
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<h1>Timelapse Rig</h1>
+				<p style="text-align:center">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/qBKt7m3d6O4" frameborder="0" allowfullscreen></iframe>
+				</p>
+				<p>Everybody has lying around one of those bulky compact digital cameras. My idea here was to have a pretti uniform solution
+					that let's you convert on of those into a timelapse machine. To make a Full HD video are sufficient photos of resolution
+					1920x1080 that are equivalent to about 2 megapixels which usually also these older cameras are capable of. The video
+					above was taken with a Premier(?) 5Mpx camera of 2005, I'm satisfied with the result, clearly not professional but still
+					sufficient to grab those likes on Instagram.
+				</p>
+				<p>Sure, the image quality is not defined only by the number of pixels, but using a 5 megapixel camera not at its maximum
+					resolution but with its best image quality led to quite good results. Obviously some noise is there especially when
+					the light is scarce. Another problem is the limited possibility of tweaking the camera settings, for example in the
+					video above there is a precise moment when the white balance shifts drammatically. This is simply because I had to leave
+					it in auto.
+				</p>
+				<p>The first thing I learned about timelapses is the foundamental importance of having a good tripod. I have very nice timelapses
+					made with this is setup that sadly are not worth publishing because too shaky because of the wind. Battery power is
+					also quite important, as you can imagine. The system, comprehending the camera, is powered by a 12V battery.
+				</p>
+				<p>The idea is actually very simple: a jig for the compact camera that periodicaly presses the shutter button. The motion
+					is achieved through a solenoid controlled by an embedded system. The control board has a screen which displays the interval
+					and the battery level, and it's also used for setting up the timing. The inputs are an ON/OFF switch and two potentiometers
+					one used to control the delay between photos, the other to calibrate the interaction with the two stage shutter button.
+				</p>
+				<p>The latter was quite a complex part to deal with since the button was not intended to be used this way for sure. The
+					intended use-case scenario involves a human feeling with his touch the first pressing and wait until the camera has
+					focus then, after that, use more force to trigger the second level of pressing and snap that photo. The difference in
+					force is quite subtle, moreover the focus time is not constant but usually is the same into the same timelapse since
+					the conditions don't vary lot. Both of this quantities can be fine tuned using the the second potentiometer.
+				</p>
+
+				<p>The code can be found on GitHub and for question you can use the form in the bio page.</p>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<section>
+					<h2>Follow</h2>
+					<ul class="icons">
+						<li>
+							<a href="https://twitter.com/OlimexSmart" class="icon style2 fa-twitter">
+								<span class="label">Twitter</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.facebook.com/Luca.Olivieri94" class="icon style2 fa-facebook">
+								<span class="label">Facebook</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/olimexsmart/" class="icon style2 fa-instagram">
+								<span class="label">Instagram</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/olimexsmart" class="icon style2 fa-github">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+						<li>
+							<a href="mailto:ollivernew@hotmail.it?Subject=Olimexsmart%20visitor" class="icon style2 fa-envelope-o">
+								<span class="label">Email</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<ul class="copyright">
+					<li>Design:
+						<a href="http://html5up.net">HTML5 UP</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+</body>
+
 </html>
