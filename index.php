@@ -1,5 +1,6 @@
 <?php
-
+// Insert page request into database
+require_once 'AccessLogger.php';
 $page = $_GET['page'];
 
 if ($page == null) {
@@ -12,3 +13,6 @@ if (!file_exists($page . '.html') || !file_exists('articleTemplate.html')) {
 
 echo str_replace('§§§', file_get_contents($page . '.html'), file_get_contents('articleTemplate.html'));
 
+
+$logger = new AccessLogger($page);
+$logger->log();

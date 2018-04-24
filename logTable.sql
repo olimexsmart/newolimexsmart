@@ -1,0 +1,9 @@
+CREATE TABLE `start` (
+  `no` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `ip` char(15) DEFAULT NULL,
+  `device` char(6) DEFAULT NULL,
+  `geolocation` varchar(100) DEFAULT NULL,
+  `userAgent` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`no`)
+) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
