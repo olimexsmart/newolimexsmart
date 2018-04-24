@@ -1,181 +1,51 @@
-<!DOCTYPE HTML>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-
-<head>
-	<title>OlimexSmart</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	<link rel="icon" type="image/png" href="images/favicon.png" />
-</head>
-
-<body>
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-		<!-- Header -->
-		<header id="header">
-			<div class="inner">
-
-				<!-- Logo -->
-				<a href="index.html" class="logo">
-					<span class="symbol">
-						<img src="images/favicon.png" alt="" />
-					</span>
-					<span class="title">OlimexSmart</span>
-				</a>
-
-				<!-- Nav -->
-				<nav>
-					<ul>
-						<li>
-							<a href="#menu">Menu</a>
-						</li>
-					</ul>
-				</nav>
-
-			</div>
-		</header>
-
-		<!-- Menu -->
-		<nav id="menu">
-			<h2>Menu</h2>
-			<ul>
-				<li>
-					<a href="index.html">Projects</a>
-				</li>
-				<li>
-					<a href="bio.html">Curriculum</a>
-				</li>
-				<li>
-					<a href="logger/logger.html">Home logging</a>
-				</li>
-				<li>
-					<a href="fitbit.html">FitBit OAuth2</a>
-				</li>
-			</ul>
-		</nav>
-
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
-				<h1>Vabbuo.it</h1>
-				<!-- <span class="image main"><img src="images/pic13.jpg" alt="" /></span> -->
-				<p>
-					<span class="image left">
-						<img src="images/vabbuo2.png" alt="" />
-					</span>
-					One day quite some time ago I got a flat Internet connection at home. It was very exciting and all, but after spending some
-					time on videos of people getting hurt I was quickly bored. I had the hole world at the reach of that white bar that
-					the blinking cursors seemed like a timer counting how much time I didn't spend searching for stuff. So I searched for
-					something random. Com'on I already searched my name, so what? In italian "boh" is something like "No Idea" or "I don't
-					know", a sort of "Meh...". So I searched for "boh" on the italian Google and the first result was for a site -
-					<a
-					 href="www.boh.it">boh.it</a> - which claimed to be the first "site" where there is nothing. For some reason I fell in love with it, the
-						first thing welcoming you was a light blue page with a big dark blu round button in the middle of it. I mean imagining
-						to enter it the first time the experience is quite confusing. What is this thing? Because you where actually expeting
-						something from a site named "boh"? It was simply a discovery. Satisfying the curiosity of clicking on the button you
-						where redirected to a page explaining the phylosophy of the thing, along a with a simple form that asked for an email
-						and a message. Sometimes I filled it up and submit it but never got a response, maybe I got some more spam instead.
-						Sadly from the beginning of summer
-						<a href="www.boh.it">boh.it</a> is down, probably because the owner got tired of paying for the hosting.
-				</p>
-				<p>
-					<span class="image right">
-						<img src="images/vabbuo1.png" alt="" />
-					</span>
-					Anyway in the years I used
-					<a href="www.boh.it">boh.it</a> for testing Internet connection and I really felt like missing a tool when became unreachable. In the same
-					period I was starting an internship in a web development company so I got an idea about filling that unbearable hole
-					in the World Wide Web. By the why through WHOISing the URL I tryed to contract the domain owner by I got no response
-					and the domain expires in 2018 so, you know, things might be happen. I bought the
-					<a href="vabbuo.it">vabbuo</a> domain and dove into this new world, since I actually never got a formal education in web development. The
-					underlining idea was still the same: something completely useless but with a pretentious meaning. The button is still
-					there, but green instead. Unexpectedly senteces snow from the top to make your life much better and the background changes
-					color smoothly you know man, great stuff. Accordingly the form know lets you submit new senteces along with some other
-					information.
-				</p>
-				<p>
-					<span class="image left">
-						<img src="images/vabbuo4.jpg" alt="" />
-					</span>
-					Touching instead some technicalities, the welcome page is essentially made from two canvas elements, one to draw the button,
-					always centered in the page with some CSS magic, and the other covering the whole page where the sentences are contantly
-					redrawn. Two Javascript classes take care of the senteces in a master-slaves fashion, the master is given the instruction
-					of how many senteces we need and he instanciates them keeping a reference in an array. Through requestAnimationFrame
-					a drawAll method of the master class is called periodically which clears the canvas and calls all the draw methods of
-					the slave classes which each one redraws itself advancing then in position. When a sentence gets under the screen it
-					is time to create a new one, requesting a sentence to the server and then recalculate all the dimensions.
-				</p>
-				<p>Server-side there is not much going on, mostly logging statistics and moving data in or out the database. Maybe the most
-					interesting part about the server is that it runs on a headless RaspberryPi connected to my home ADSL. The server
-					<i>serves</i>
-					this very site too, not without struggle, but it works for the low traffic we are talking about. The Afraid Dynamic DNS is
-					used, great project by the way.
-				</p>
-
-				<p>The code can be found on GitHub and for question you can use the form in the bio page.</p>
-			</div>
-		</div>
-
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="inner">
-				<section>
-					<h2>Follow</h2>
-					<ul class="icons">
-						<li>
-							<a href="https://twitter.com/OlimexSmart" class="icon style2 fa-twitter">
-								<span class="label">Twitter</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.facebook.com/Luca.Olivieri94" class="icon style2 fa-facebook">
-								<span class="label">Facebook</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.instagram.com/olimexsmart/" class="icon style2 fa-instagram">
-								<span class="label">Instagram</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://github.com/olimexsmart" class="icon style2 fa-github">
-								<span class="label">GitHub</span>
-							</a>
-						</li>
-						<li>
-							<a href="mailto:ollivernew@hotmail.it?Subject=Olimexsmart%20visitor" class="icon style2 fa-envelope-o">
-								<span class="label">Email</span>
-							</a>
-						</li>
-					</ul>
-				</section>
-				<ul class="copyright">
-					<li>Design:
-						<a href="http://html5up.net">HTML5 UP</a>
-					</li>
-				</ul>
-			</div>
-		</footer>
-
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
+<h1>Vabbuo.it</h1>
+<p>
+	<span class="image left">
+		<img src="images/vabbuo2.png" alt="" />
+	</span>
+	One day quite some time ago I got a flat Internet connection at home. It was very exciting and all, but after spending some
+	time on videos of people getting hurt I was quickly bored. I had the hole world at the reach of that white bar that the
+	blinking cursors seemed like a timer counting how much time I didn't spend searching for stuff. So I searched for something
+	random. Com'on I already searched my name, so what? In italian "boh" is something like "No Idea" or "I don't know", a sort
+	of "Meh...". So I searched for "boh" on the italian Google and the first result was for a site -
+	<a href="www.boh.it">boh.it</a> - which claimed to be the first "site" where there is nothing. For some reason I fell in love with it, the first
+	thing welcoming you was a light blue page with a big dark blu round button in the middle of it. I mean imagining to enter
+	it the first time the experience is quite confusing. What is this thing? Because you where actually expeting something from
+	a site named "boh"? It was simply a discovery. Satisfying the curiosity of clicking on the button you where redirected to
+	a page explaining the phylosophy of the thing, along a with a simple form that asked for an email and a message. Sometimes
+	I filled it up and submit it but never got a response, maybe I got some more spam instead. Sadly from the beginning of summer
+	<a href="www.boh.it">boh.it</a> is down, probably because the owner got tired of paying for the hosting.
+</p>
+<p>
+	<span class="image right">
+		<img src="images/vabbuo1.png" alt="" />
+	</span>
+	Anyway in the years I used
+	<a href="www.boh.it">boh.it</a> for testing Internet connection and I really felt like missing a tool when became unreachable. In the same period
+	I was starting an internship in a web development company so I got an idea about filling that unbearable hole in the World
+	Wide Web. By the why through WHOISing the URL I tryed to contract the domain owner by I got no response and the domain expires
+	in 2018 so, you know, things might be happen. I bought the
+	<a href="vabbuo.it">vabbuo</a> domain and dove into this new world, since I actually never got a formal education in web development. The underlining
+	idea was still the same: something completely useless but with a pretentious meaning. The button is still there, but green
+	instead. Unexpectedly senteces snow from the top to make your life much better and the background changes color smoothly
+	you know man, great stuff. Accordingly the form know lets you submit new senteces along with some other information.
+</p>
+<p>
+	<span class="image left">
+		<img src="images/vabbuo4.jpg" alt="" />
+	</span>
+	Touching instead some technicalities, the welcome page is essentially made from two canvas elements, one to draw the button,
+	always centered in the page with some CSS magic, and the other covering the whole page where the sentences are contantly
+	redrawn. Two Javascript classes take care of the senteces in a master-slaves fashion, the master is given the instruction
+	of how many senteces we need and he instanciates them keeping a reference in an array. Through requestAnimationFrame a drawAll
+	method of the master class is called periodically which clears the canvas and calls all the draw methods of the slave classes
+	which each one redraws itself advancing then in position. When a sentence gets under the screen it is time to create a new
+	one, requesting a sentence to the server and then recalculate all the dimensions.
+</p>
+<p>Server-side there is not much going on, mostly logging statistics and moving data in or out the database. Maybe the most
+	interesting part about the server is that it runs on a headless RaspberryPi connected to my home ADSL. The server
+	<i>serves</i>
+	this very site too, not without struggle, but it works for the low traffic we are talking about. The Afraid Dynamic DNS is
+	used, great project by the way.
+</p>
+<p>The code can be found on GitHub and for question you can use the form in the bio page.</p>
