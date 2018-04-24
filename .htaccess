@@ -1,0 +1,8 @@
+# Awesome test page at: https://htaccess.madewithlove.be/
+
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !\.(?:css|js|jpe?g|gif|png)$ [NC]
+RewriteRule ^article/([A-Za-z0-9-]+)/?$ article.php?article=$1 [NC,L]
+
+# rewrite css, js and images, from root
+RewriteRule ^article/(.+)$ $1  [L]
