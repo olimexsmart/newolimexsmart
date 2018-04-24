@@ -1,8 +1,7 @@
 # Awesome test page at: https://htaccess.madewithlove.be/
+# Redirect all traffic to index.php unless the file exists, thus allowing for .js, .css and so on to be read
 
 RewriteEngine on
-RewriteCond %{REQUEST_URI} !\.(?:css|js|jpe?g|gif|png)$ [NC]
-RewriteRule ^article/([A-Za-z0-9-]+)/?$ article.php?article=$1 [NC,L]
-
-# rewrite css, js and images, from root
-RewriteRule ^article/(.+)$ $1  [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php?page=$1 [NC,L,QSA]
