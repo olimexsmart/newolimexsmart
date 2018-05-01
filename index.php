@@ -1,7 +1,7 @@
 <?php
 // Insert page request into database
 require_once 'AccessLogger.php';
-$page = $_GET['page'];
+$page = isset($_GET['page']) ? $_GET['page'] : null;
 
 if ($page == null) {
     $page = 'start';
