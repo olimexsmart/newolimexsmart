@@ -7,6 +7,8 @@ if ($page == null) {
     $page = 'start';
 }
 
+$page = str_replace('/', '', $page);
+
 if (!file_exists($page . '.html') || !file_exists('articleTemplate.html')) {
     $page = '404';
 }
