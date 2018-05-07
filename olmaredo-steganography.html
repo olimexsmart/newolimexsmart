@@ -1,0 +1,35 @@
+<h1>Olmaredo Steganography</h1>
+<p>
+	<span class="image left">
+		<img src="images/scan1.png" alt="" />
+	</span>
+	Steganography is a technique that consists in hiding a message into another information media.
+	The main application is to convey information secretly using an open channel. 
+	Other uses could exploit steganography to add metadata about the carrying stream.
+	This Android app was developed implementing a spread-spectrum techique with images as carrying media.
+	Spread-spectrum means to spread the message across the spectrum of the carrier. 
+	In other words, instead of alterating directly the carrier in the time (or space in case of images) domain,
+	the carrier is first transformed into the frequency domain, then the message is added. At last everything
+	is trasmormed back in the original domain.
+</p>
+
+<p>
+	The added complexity of this technique is compesated by the message being more unnoticable. 
+	Alterating the carrier directly into the original domain results in more noticeable changes into the frequency domain.
+	That said, with spread-spectrum the retreival of the message is not anymore a deterministic process. 
+	During the embedding process is necessary to specify an embedding power, the higher the power, 
+	the lower the error probability. At the same time, with higher power distorting patterns in the carrier 
+	become more evident.
+</p>
+
+<p>
+	The foundamental part that links the message and the carrier, allowing thus to separate them, is the key. 
+	The key is generated optimally starting from the carrier. This means that same images have same keys. 
+	The app stringyfies the key allowing to be sent in text message form. 
+</p>
+
+<p>
+	The app can be downloaded from the Google Play Store 
+	
+	<button href="linkhere">Download</button>
+</p>
