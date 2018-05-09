@@ -4,4 +4,5 @@
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_METHOD} !=HEAD
 RewriteRule ^(.*)$ /index.php?page=$1 [NC,L,QSA]
