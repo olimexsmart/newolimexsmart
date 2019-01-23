@@ -1,0 +1,25 @@
+<h1>Home Data Logger</h1>
+<span class="image main">
+		<img src="/images/logger1.jpg" alt="" />
+</span>
+<p>
+    I live in an attic where the termic insulation is not that great. In order to keep track of the gradual
+    improvements I perform on the house, I've installed in every room a WiFi node that allows to log temperature and humidity.
+    As for now, the system is still purely a prototype with no particular plans for the future.
+</p>
+<p>
+    Each node consist of an ESP8266 with an DHT11 temperature and humidity digitaly sensor. 
+    The <a href="vabbuo.it">vabbuo</a> server is programmed to receive data from these nodes and logs everything into a MySQL database.
+    A page <a href="/tracker/tracker.html">on this very site</a> allows to display graphs of the logged data.
+</p>
+<span class="image main">
+		<img src="/images/logger2.png" alt="" />
+</span>
+<p>
+    There are several problems with the system, the first being the choice of the DHT11 sensor. Precision of the 
+    measurament of the temperature is only of one full degree and I have serious doubt of the accuracy and calibration across
+    different sensors. On top of that, they seems to fail pretty often.
+    <br>
+    The second problem is the fact that the nodes are currently running of old Nokia phone charges. The total energy consuption
+    for 7 sensors is about 1W. This is not bad but not grat either. The wire and the charger arre quite ugly to look at.
+</p>
