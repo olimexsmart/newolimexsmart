@@ -1,39 +1,46 @@
 <h1>GPS boat tracker</h1>
+<span class="image main">
+		<img src="/images/tracker3.jpg" alt="" />
+</span>
 <p>
-	My father loves to sail on our old but reliable sailboat. But since our father turned 60 me 
+	My father loves to sail on our old but reliable sailboat. But since our father turned 60 me
 	and my mother have been concerned with his safety in these periods of his that can last several
-	weeks. 
-</p> 
-<p>
-	The project consist in an Arduino system installed on the boat, powered directly from the boat's batteries.
-	The box consist in a Mega2560 MCU in a breakout configuration intead of the standard Arduino footprint, 
-	to save some space.
-	Connected to MCU there is a UBlox GPS module, a Quelctek M10 GSM module and a SD card reader. A couple of LEDs and
-	a homebrew watchdog complete the system. Why a watchdog? Well the GSM module, which BTW is a genuine Arduino shield,
-	comes with an official library that occasionaly hangs. And by hangs I mean that it deadlocks the system
-	into functions where are present while loops which conditions gets never satisfied. The library generates quite a 
-	considerable amount of compilation warnings too, which is a clue that is no longer mantained. It makes sense since
-	GSM shield are retired products by now. I have modified some of the loops integrating an additional check for
-	a maximum number of loops, but still a watchdog never hurts.
+	weeks.
 </p>
 <p>
-	The watchdog is nothing more than an ATTiny85 programmed to have an interrupt on a pin which overwrites an internal 
-	variable to the current number of milliseconds elapsed since power up.
+	<span class="image left">
+		<img src="/images/tracker2.jpg" alt="" />
+	</span>
+	The project consist in an Arduino system installed on the boat, powered directly from the boat's batteries.
+	To save some space, the Mega2560 MCU is in a breakout configuration intead of the standard Arduino footprint.
+	Connected to the MCU there are a UBlox GPS module, a Quelctek M10 GSM module and a SD card reader. On top of that, a 
+	couple of LEDs and a homebrew watchdog complete the system. Why a watchdog? Well the GSM module, which is a genuine 
+	Arduino shield, comes with an official library that occasionaly hangs. By hangs I mean that it deadlocks the system
+	into while loops which conditions never get satisfied. The library generates quite a considerable amount of compilation 
+	warnings too, which is a clue that is no longer mantained. It makes sense since	GSM shield are retired products by now. 
+	I have modified some of the loops integrating an additional check for a maximum number of loops, but still a watchdog never hurts.
+</p>
+<p>
+	The watchdog is nothing more than an ATTiny85 programmed to have an interrupt on a pin which overwrites an internal
+	variable to the current number of milliseconds elapsed since power up. 
 	The main loop simply checks that the time since the last interrupt is under a certain threshold, in this particular case
 	3 minutes. The Mega MCU at every main loop cycle triggers the watchdog interrupt. If the Mega deadlocks, the timer system
 	on the ATTiny exipers and both the Mega and the GPS module get a reset impulse.
+	<span class="image right">
+			<img src="/images/tracker4.jpg" alt="" />
+	</span>
 </p>
 <p>
-	The data collected from the GPS is then sent to the <a href="vabbuo.it">vabbuo</a> server through a GET request and
-	there a PHP script stores the data on the MySQL database. Pretty basic part here. A web page is served 
-	<a href="">on this very site</a> using Google Maps APIs to display the routes sailed by 
+	The data collected from the GPS is then sent to the <a href="vabbuo.it">vabbuo</a> server through a GET request. 
+	On the server a PHP script stores the data on a MySQL database. Pretty basic part here. A web page is served
+	<a href="/tracker/tracker.html">on this very site</a> using Google Maps APIs to display the routes sailed by
 	my father in real time.
 </p>
-<p>	
+<p>
 	Then what is the SD card reader for?
-	Well the problem that in the open sea cellular signal might not be present all the time. My father generally avoids 
-	sailing too far from the coast, but still there might be some blindspots. The SD card serves as a high-volume, 
-	non-volatile memory. In RAM there would be not enough space since the entries are saved as an URL encoded string of 
-	key-values pairs. Maybe a not the most elegant solution, but having a couple of GB on board saved me in terms of 
-	debugging because it allows me to store all the debug prints on it like some sort of device logger.
+	Well the problem that in the open sea cellular signal might not be present all the time. My father generally avoids
+	sailing too far from the coast, but still there might be some blindspots. The SD card serves as a high-volume 
+	non-volatile memory. In RAM there would be not enough space since the entries are saved as an URL encoded string of
+	key-values pairs. Maybe a not the most elegant solution, but having a couple of GB on board saved me in terms of
+	debugging because it allows also to store logs of the system under operation.
 </p>
