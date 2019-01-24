@@ -1,1 +1,52 @@
-<h1>Door Opener</h1>
+<h1>Door Opener PortoNet</h1>
+<span class="image main">
+    <img src="/images/door1.jpg" alt="" />
+</span>
+<p>
+    Generally, in a flat complex there is one common entrance at ground level with a locked door.
+    Every resident has a copy of the key for the door. In order to being able to open the main
+    entrance remotely in case of incoming guests, each apartment has a doorphone.
+    This is the nominal scenario, but my home lacks the doorphone part. When I have some guests,
+    the only solution to let them in is to physically run down 7 floors and open the main entrance door.
+</p>
+<p>
+    Since this is not acceptable, I needed to develop a solution. It is important to know that I had acces
+    to another doorphone of the flat complex, being a friend of mine. The first idea was to build
+    a remote control in VHF or repurpose a garage opener, implementing a direct, on-off, communication.
+    This has proven to be more complex than expected from the points of view of range of the
+    communication, it needed to travel across sevaral concrete walls, and of security of the system.
+    Garage door openers are notoriously easy to crack, while VHF modules require the implementation
+    of some sort of access protocol, otherwise the system would react to any kind of noise.
+</p>
+<p>
+    <span class="image right">
+        <img src="/images/door2.png" alt="" />
+    </span>
+    The design shifted towards a IoT solution, allowing to solve the communication problem by using
+    the Internet. At this point the possibilities where immense in respect to pure point to point custom
+    system. I decided to take the project to the next level, implementing a server that publishes
+    a web page that anyone can load. Access would be granted by inserting a key into a form.
+    As a consequent requirement, an administrator needs to be able of managing the keys.
+    <br>
+    All of this was achieved with an Arduino system on a ATMega328p, connected to an Ethernet module,
+    a relé, a microSD card reader and a DS1307 real time clock. Incredibly enough, I could not find a simple library that implements
+    an HTTP protocol parser, able to provide the basic information needed namely the method (POST or GET at least), the
+    resource path and the aventual message. Access to the headers can be useful, but those are definitely too cumbersome
+    for 2KB of RAM. In conclusion, I needed to write my own HTTP parser implementation, with the priority
+    of being fast and frugal in terms of memory consumption.
+</p>
+<p>
+    There are two web pages, the index page contains the log in form, along with some informations like
+    the total number of openings and the some links. The other page is the administrator panel,
+    where is possible to add, remove, check the active access keys. The administrator has a master key that
+    allows these modifications.
+    All the files necessary for the web pages are saved in the microSD card. Along with those, two files contain the master and normal access keys.
+    Several log files are constantly updated by the system.
+    The clock is necessary to manage the automatic expiration of keys, which can have a maximum validity of one year.
+    The relé is wired to the button of the doorphone at my friend apartment.
+</p>
+<p>
+    With this setup I can now provide to my guests the address of the site and a key which expires, for example,
+    in 6 hours. They are able to open the complex doors by themselves. In addition, this has proven to be quite handy
+    for myself and my friend, since now we don't have to search for the key every time we want to get home.
+</p>
