@@ -1,0 +1,9 @@
+[submodule "portonet"]
+	path = portonet
+	url = git@github.com:olimexsmart/portoNet.git
+[submodule "embe"]
+	path = embe
+	url = git@github.com:olimexsmart/IOT-Door-Sign.git
+[submodule "pokerpolacco"]
+	path = pokerpolacco
+	url = git@github.com:olimexsmart/poker-brooker.git
